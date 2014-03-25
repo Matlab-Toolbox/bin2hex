@@ -73,6 +73,24 @@
   end
   
    
+ %% Testing right allignmnet String and Vector input
+  test ={};
+  test(end+1).input =      '1000';   test(end).expect =   '8' ;
+  test(end+1).input =     '01000';   test(end).expect =  '08' ;
+  
+  test(end+1).input =  [ 1 0 0 0];   test(end).expect =   '8' ;
+  test(end+1).input = [0 1 0 0 0];   test(end).expect =  '08' ;
+  
+    for vector=1:size(test,2)
+     b       = bin2hex(test(vector).input, 'align', 'right');
+     if (  ~isequal(b, test(vector).expect)  )
+       disp('bin2hex() Failed ')
+       error_count = error_count + 1;
+     else
+       pass_count  = pass_count  + 1;
+     end
+    end
+  
   
   %% Test Status Report
   if error_count > 0
