@@ -27,6 +27,14 @@
   test(end+1).input =     '1101';   test(end).expect =  'D' ;
   test(end+1).input =     '1110';   test(end).expect =  'E' ;
   test(end+1).input =     '1111';   test(end).expect =  'F' ;
+  test(end+1).input = '11101110';   test(end).expect = 'EE' ;
+  test(end+1).input = '11111110';   test(end).expect = 'FE' ;
+ 
+  %% Integer input
+  test(end+1).input =         0 ;   test(end).expect =  '0' ;
+  test(end+1).input =      1111 ;   test(end).expect =  'F' ;
+  test(end+1).input =  11101110 ;   test(end).expect = 'EE' ;
+  test(end+1).input =  11111110 ;   test(end).expect = 'FE' ;
  
   %% The tests
   error_count = 0;
