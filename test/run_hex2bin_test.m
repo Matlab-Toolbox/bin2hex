@@ -27,6 +27,15 @@
   test(end+1).input =  'D';   test(end).expect =     '1101' ;
   test(end+1).input =  'E';   test(end).expect =     '1110' ;
   test(end+1).input =  'F';   test(end).expect =     '1111' ;
+  test(end+1).input = 'EE';   test(end).expect = '11101110' ;
+  test(end+1).input = 'FE';   test(end).expect = '11111110' ;
+  
+  %% Vector Input
+  test(end+1).input =     ['0'];   test(end).expect =        '0' ;
+  test(end+1).input =     ['1'];   test(end).expect =        '1' ;
+  test(end+1).input = ['E' 'E'];   test(end).expect = '11101110' ;
+  test(end+1).input = ['F' 'E'];   test(end).expect = '11111110' ;
+  
  
   %% The tests
   error_count = 0;
