@@ -36,6 +36,12 @@
   test(end+1).input = ['E' 'E'];   test(end).expect = '11101110' ;
   test(end+1).input = ['F' 'E'];   test(end).expect = '11111110' ;
   
+  %% Integer (Representing Hexadecimal) inputs
+  test(end+1).input =   0 ;   test(end).expect =        '0' ;
+  test(end+1).input =   1 ;   test(end).expect =        '1' ;
+  test(end+1).input =  10 ;   test(end).expect =    '10000' ;
+  test(end+1).input =  11 ;   test(end).expect =    '10001' ;
+  
  
   %% The tests
   error_count = 0;
