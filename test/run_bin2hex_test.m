@@ -91,6 +91,26 @@
      end
     end
   
+  %% Testing right allignmnet and width specification String, Vector & Integer input
+  test ={};
+  test(end+1).input =      '1000';   test(end).expect = '0008' ; test(end).width = 4 ;
+  test(end+1).input =     '01000';   test(end).expect =  '008' ; test(end).width = 3 ;
+  
+  test(end+1).input =  [ 1 0 0 0];   test(end).expect = '0008' ; test(end).width = 4 ;
+  test(end+1).input = [0 1 0 0 0];   test(end).expect =  '008' ; test(end).width = 3 ;
+  
+  test(end+1).input =        1001;   test(end).expect = '0009' ; test(end).width = 4 ;
+  test(end+1).input =       01001;   test(end).expect =  '009' ; test(end).width = 3 ;
+  
+    for vector=1:size(test,2)
+     b       = bin2hex(test(vector).input, 'align', 'right', 'width', test(vector).width );
+     if (  ~isequal(b, test(vector).expect)  )
+       disp('bin2hex() Failed ')
+       error_count = error_count + 1;
+     else
+       pass_count  = pass_count  + 1;
+     end
+  end
   
   %% Test Status Report
   if error_count > 0
