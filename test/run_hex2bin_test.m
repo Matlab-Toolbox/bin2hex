@@ -6,7 +6,7 @@
 
   %% For Functions
   %    Add function to path
-  addpath('../function/');
+  run('../load_toolbox.m')
 
   %% Test vectors
   test ={};
